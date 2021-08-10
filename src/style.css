@@ -1,0 +1,151 @@
+:root {
+  --black: #101010;
+  --grey: #202020;
+  --pink: #db7093;
+  --yellow: #f0e68c;
+  --white: #f0f0f0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: arial;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  background: var(--black);
+  color: var(--yellow);
+}
+
+#header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left-margin: auto;
+  right-margin: auto;
+  background: var(--grey);
+  font-size: 1.2rem;
+  z-index: 10;
+}
+
+a {
+  text-decoration: none;  
+  color: var(--pink);
+}
+
+a:hover {
+  background: var(--yellow);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav a {
+  padding: 1rem;
+}
+
+#navbar {
+  float: left;
+}
+
+#contact {
+  float: right;
+}
+
+#main-content {
+  position: absolute;
+  top: 4rem;
+  width: 100%;
+  height: 100vh;
+}
+
+#welcome-section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  letter-spacing: .1rem;
+}
+
+#projects {
+  position: absolute;
+  top: 100vh;
+  width: 95%;
+  height: 90vh;
+  padding: 2rem;
+  text-align: center;
+  background: var(--grey);
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-gap: 4rem;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  margin-bottom: 6rem;
+}
+
+.project-tile {
+}
+
+.project-link {
+  width: 100%;
+  height: 100%;
+}
+
+object {
+}
+
+.project-title:hover {
+  background: var(--yellow);
+}
+
+@media (max-width: 800px) {
+  #header {
+    max-height: 40%;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  
+  .nav {
+    flex-direction: column;
+  }
+  
+  #main-content {
+    top: 20rem;
+  }
+  
+  .project-grid {
+    grid-template-columns: repeat (1fr, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  #navbar, #contact {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .nav a {
+    width: 100%;
+  }
+  
+  #main-content {
+    top; 50rem;
+  }
+  
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}
